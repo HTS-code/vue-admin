@@ -1,15 +1,41 @@
 import { fileURLToPath, URL } from 'node:url'
 
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import vueDevTools from 'vite-plugin-vue-devtools'
+import VueDevTools from 'vite-plugin-vue-devtools'
 
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [vue(), vueDevTools()],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+export default defineConfig(({ mode }) => {
+  // eslint-disable-next-line no-undef
+  const env = loadEnv(mode, process.cwd(), '')
+  return {
+    // 全局常量注入
+    define: {
+      __APP_VERSION__: JSON.stringify(env.npm_package_version) // 项目版本号
+    },
+    envDir: 'env',
+    plugins: [vue(), VueDevTools()],
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('./src', import.meta.url))
+      }
+    },
+    server: {
+      proxy: {
+        '/api': {
+          target: 'http://127.0.0.1:3000',
+          changeOrigin: true,
+          rewrite: path => path.replace(/^\/api/, '')
+        }
+      }
+    },
+    build: {
+      rollupOptions: {
+        output: {
+          chunkFileNames: 'static/js/[name]-[hash].js', // 引入文件名的名称
+          entryFileNames: 'static/js/[name]-[hash].js', // 包的入口文件名称
+          assetFileNames: 'static/[ext]/[name]-[hash].[ext]' // 资源文件像 字体，图片等
+        }
+      }
     }
   }
 })
