@@ -4,7 +4,7 @@
 
 <script setup></script>
 
-<style scoped>
+<style scoped lang="scss">
 .index {
   font-size: 20px;
 }
