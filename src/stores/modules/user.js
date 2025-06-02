@@ -8,8 +8,7 @@ export const useUserStore = defineStore('userStore', {
   state: () => ({
     userInfo: {},
     token: {},
-    menu: [],
-    asyncRouteList: []
+    menu: []
   }),
   actions: {
     setToken(data) {
@@ -21,9 +20,7 @@ export const useUserStore = defineStore('userStore', {
     setMenu(data) {
       this.menu = data
     },
-    setRouteList(list) {
-      this.asyncRouteList = list
-    },
+
     async getInfoAction() {
       // 设置用户信息
       this.setUserInfo({

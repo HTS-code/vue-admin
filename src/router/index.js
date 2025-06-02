@@ -5,6 +5,7 @@ import 'nprogress/nprogress.css'
 import { useUserStore } from '@/stores/modules/user'
 import config from '@/config'
 import { asyncRoute, setAsyncRoute } from './utils'
+import { useSettingStore } from '@/stores/modules/setting'
 
 // 获取前端注册所有动态路由
 const modules = import.meta.glob('./modules/*.js', { eager: true })
@@ -58,9 +59,9 @@ router.beforeEach(async (to, from, next) => {
   if (!userStore.userInfo.username) {
     await asyncRoute()
   }
-
+  const settingStore = useSettingStore()
   // 如果用户菜单存在，但动态路由为空
-  if (!userStore.asyncRouteList || !userStore.asyncRouteList.length) {
+  if (!settingStore.asyncRouteList || !settingStore.asyncRouteList.length) {
     setAsyncRoute(routes)
 
     return next({ ...to, replace: true })

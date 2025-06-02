@@ -3,6 +3,7 @@ import router from '.'
 import { useUserStore } from '@/stores/modules/user'
 import { RESETSTORE } from '@/stores/reset'
 import { notFoundRouter } from './static'
+import { useSettingStore } from '@/stores/modules/setting'
 
 /**
  * @description 异步路由
@@ -34,7 +35,7 @@ export const asyncRoute = async () => {
  */
 export const setAsyncRoute = routes => {
   let asyncRouteList = []
-  const userStore = useUserStore()
+  const settingStore = useSettingStore()
 
   // 是否开启动态路由
   if (config.ISASYNCROUTER) {
@@ -44,7 +45,7 @@ export const setAsyncRoute = routes => {
     asyncRouteList = routes
   }
 
-  userStore.setRouteList(asyncRouteList)
+  settingStore.setRouteList(asyncRouteList)
 
   // 添加动态路由
   asyncRouteList.forEach(route => {
