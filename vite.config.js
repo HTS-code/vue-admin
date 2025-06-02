@@ -3,6 +3,9 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import VueDevTools from 'vite-plugin-vue-devtools'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 export default defineConfig(({ mode }) => {
   // eslint-disable-next-line no-undef
@@ -13,7 +16,16 @@ export default defineConfig(({ mode }) => {
       __APP_VERSION__: JSON.stringify(env.npm_package_version) // 项目版本号
     },
     envDir: 'env',
-    plugins: [vue(), VueDevTools()],
+    plugins: [
+      vue(),
+      VueDevTools(),
+      AutoImport({
+        resolvers: [ElementPlusResolver()]
+      }),
+      Components({
+        resolvers: [ElementPlusResolver()]
+      })
+    ],
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url))
