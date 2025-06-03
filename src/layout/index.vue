@@ -5,7 +5,12 @@
     </aside>
     <section class="main-container">
       <header>
-        <header-container class="header-container" />
+        <header-container :container="layoutRef" class="header-container" />
+        <tags-container
+          class="tags-container"
+          :class="settingStore.isCollapsed ? 'tags-container-collapsed' : ''"
+          v-show="config.ISTAGS"
+        />
       </header>
 
       <section>
@@ -24,8 +29,10 @@
 </template>
 
 <script setup>
+import config from '@/config'
 import sidebarContainer from './components/sidebar/index.vue'
 import headerContainer from './components/header/index.vue'
+import tagsContainer from './components/tags/index.vue'
 import { useSettingStore } from '@/stores/modules/setting'
 import { useTagStore } from '@/stores/modules/tag'
 import { ref, watch } from 'vue'

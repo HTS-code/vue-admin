@@ -21,11 +21,38 @@ const settingStore = useSettingStore()
 const route = useRoute()
 
 const menu = ref([
-  { path: '/dashboard', icon: 'icon-house', name: '首页', children: [] },
+  { path: '/dashboard', icon: 'icon-house', il18Name: 'tadHome', name: '首页', id: '01', children: [] },
+  {
+    path: '/system',
+    icon: 'icon-system',
+    name: '系统管理',
+    il18Name: 'tadSysManagement',
+    id: '05',
+    children: [
+      {
+        path: '/system/user',
+        icon: 'icon-user',
+        name: '用户管理',
+        il18Name: 'tadUserManage',
+        id: '051',
+        children: []
+      },
+      {
+        path: '/system/role',
+        icon: 'icon-person',
+        name: '角色管理',
+        il18Name: 'tadRoleManage',
+        id: '052',
+        children: []
+      }
+    ]
+  },
   {
     path: '/about/index',
     icon: 'icon-about',
     name: '关于',
+    il18Name: 'tadAbout',
+    id: '07',
     children: []
   }
 ])

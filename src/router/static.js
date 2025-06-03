@@ -4,7 +4,7 @@
 export const staticRoute = [
   {
     path: '/',
-    meta: { title: '首页', icon: '' },
+    meta: { title: '首页', i18nName: 'tadHome', icon: 'icon-house' },
     name: 'Home',
     redirect: '/dashboard',
     component: () => import('@/layout/index.vue'),

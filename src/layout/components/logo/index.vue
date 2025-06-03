@@ -1,7 +1,9 @@
 <template>
   <div class="logo">
     <img class="logo-img" src="@/assets/logo.svg" alt="logo" />
-    <h1 class="animate__animated animate__fadeInLeft" v-show="!settingStore.isCollapsed">后台管理系统</h1>
+    <h1 class="animate__animated animate__fadeInLeft" v-show="!settingStore.isCollapsed">
+      {{ $t('messages.title') }}
+    </h1>
   </div>
 </template>
 

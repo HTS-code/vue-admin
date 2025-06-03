@@ -1,0 +1,75 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 4924413 */
+  src: url('iconfont.woff2?t=1748337033659') format('woff2'),
+       url('iconfont.woff?t=1748337033659') format('woff'),
+       url('iconfont.ttf?t=1748337033659') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 1rem;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-del:before {
+  content: "\e66e";
+}
+
+.icon-arrow-right:before {
+  content: "\e775";
+}
+
+.icon-arrow-left:before {
+  content: "\eb15";
+}
+
+.icon-language:before {
+  content: "\e681";
+}
+
+.icon-person:before {
+  content: "\e62f";
+}
+
+.icon-lang:before {
+  content: "\e61f";
+}
+
+.icon-theme:before {
+  content: "\e65e";
+}
+
+.icon-user:before {
+  content: "\e62e";
+}
+
+.icon-fulll:before {
+  content: "\e8fa";
+}
+
+.icon-message:before {
+  content: "\e667";
+}
+
+.icon-house:before {
+  content: "\e602";
+}
+
+.icon-about:before {
+  content: "\e654";
+}
+
+.icon-collapsed:before {
+  content: "\e610";
+}
+
+.icon-system:before {
+  content: "\e66a";
+}
+
+.icon-logout:before {
+  content: "\e613";
+}
+

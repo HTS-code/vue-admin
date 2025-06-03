@@ -5,7 +5,7 @@
 const route = [
   {
     path: '/about',
-    meta: { title: '关于', icon: '' },
+    meta: { title: '关于', i18nName: 'tadAbout', icon: 'icon-about' },
     name: 'About',
     redirect: '/about/index',
     component: () => import('@/layout/index.vue'),
