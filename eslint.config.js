@@ -6,11 +6,12 @@ import prettier from 'eslint-plugin-prettier'
 import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
 
 export default defineConfig([
-  globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**', '**/src/assets/icon/**']),
+  globalIgnores(['**/dist/**', '**/src/assets/**']),
   {
     languageOptions: {
       globals: {
-        ...globals.browser
+        ...globals.browser,
+        process: true
       }
     }
   },
