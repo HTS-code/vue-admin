@@ -7,7 +7,17 @@ import { defineStore } from 'pinia'
 export const useTagStore = defineStore('tagStore', {
   // 初始化默认展示【工作台】标签导航
   state: () => ({
-    tagList: []
+    tagList: [
+      {
+        meta: {
+          i18nName: 'tadHome',
+          icon: 'icon-house',
+          title: '首页'
+        },
+        name: 'Dashboard',
+        path: '/dashboard'
+      }
+    ]
   }),
   actions: {
     addTag(item) {
