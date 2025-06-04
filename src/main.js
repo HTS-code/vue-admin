@@ -17,10 +17,10 @@ import './assets/styles/index.scss'
 import './assets/icon/iconfont'
 
 // 自定义指令
-// import * as directives from '@/directives'
-// Object.keys(directives).forEach(key => {
-//   app.directive(key, directives[key])
-// })
+import * as directives from '@/directives'
+Object.keys(directives).forEach(key => {
+  app.directive(key, directives[key])
+})
 
 app.use(pinia)
 app.use(router)
