@@ -1,16 +1,19 @@
 <template>
   <div class="header" ref="header">
     <div class="header-left">
-      <span
+      <SvgIcon
         :class="settingStore.isCollapsed ? 'icon-style-form' : ''"
-        class="iconfont icon-collapsed"
+        name="collapsed"
+        width="1.5rem"
+        height="1.5rem"
+        cursor="pointer"
         @click="flodClick"
-      ></span>
+      />
       <CoustomBreadcrumb class="bread-crumb" v-if="config.ISBREADCRUMB" />
     </div>
     <div class="header-right">
-      <div class="header-icon" v-fullscreen>
-        <span class="iconfont icon-fulll"></span>
+      <div class="header-icon">
+        <SvgIcon name="fulll" width="1.2rem" height="1.2rem" cursor="pointer" />
       </div>
       <CustomFontSize />
       <CustomLang />

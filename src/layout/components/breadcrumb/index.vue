@@ -4,13 +4,7 @@
       <el-breadcrumb-item v-for="item in breadCrumbList" :key="item.path">
         <template #default>
           <div class="breadcrumb">
-            <el-icon :size="14">
-              <IconCustomHouse v-if="item?.meta?.icon === 'IconCustomHouse'" />
-              <IconCustomSystem v-if="item?.meta?.icon === 'IconCustomSystem'" />
-              <IconCustomUser v-if="item?.meta?.icon === 'IconCustomUser'" />
-              <IconCustomPerson v-if="item?.meta?.icon === 'IconCustomPerson'" />
-              <IconCustomAbout v-if="item?.meta?.icon === 'IconCustomAbout'" />
-            </el-icon>
+            <SvgIcon :name="item?.meta?.icon" marginRight="3px" />
             <span>{{ $t(`messages.${item?.meta?.i18nName}`) }}</span>
           </div>
         </template>

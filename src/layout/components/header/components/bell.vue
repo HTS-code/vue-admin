@@ -3,12 +3,7 @@
     <template #reference>
       <el-badge :value="3" :max="9" :offset="[-12, 17]">
         <div class="header-icon">
-          <span
-            @mouseover="onMouseOver"
-            @mouseleave="onMouseLeave"
-            :class="isHover ? 'animate__animated animate__swing' : ''"
-            class="iconfont icon-message"
-          ></span>
+          <SvgIcon name="message" width="1.2rem" height="1.2rem" cursor="pointer" />
         </div>
       </el-badge>
     </template>
@@ -34,14 +29,6 @@ import { ref } from 'vue'
 import { ElMessage } from 'element-plus'
 
 const activeName = ref('notify')
-
-const isHover = ref(false)
-const onMouseOver = () => {
-  isHover.value = true
-}
-const onMouseLeave = () => {
-  isHover.value = false
-}
 const clearBell = () => {
   ElMessage.success('清除消息成功')
 }

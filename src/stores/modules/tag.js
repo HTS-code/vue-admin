@@ -11,7 +11,7 @@ export const useTagStore = defineStore('tagStore', {
       {
         meta: {
           i18nName: 'tadHome',
-          icon: 'icon-house',
+          icon: 'house',
           title: '首页'
         },
         name: 'Dashboard',

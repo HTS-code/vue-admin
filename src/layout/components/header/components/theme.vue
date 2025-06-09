@@ -1,6 +1,6 @@
 <template>
   <div class="header-icon" @click="getThemeDrawer">
-    <span class="iconfont icon-theme"></span>
+    <SvgIcon name="theme" width="1.2rem" height="1.2rem" cursor="pointer" />
   </div>
   <custom-drawer :isShow="drawerVisible" :title="$t('messages.themeConfiguration')" @close="drawerClose">
     <div class="cell">

@@ -10,7 +10,8 @@
           v-for="(tag, index) in tagList"
           :key="tag.path"
         >
-          <span class="tag-icon" :class="'iconfont ' + tag?.meta?.icon"></span>
+          <!-- <span class="tag-icon" :class="'iconfont ' + tag?.meta?.icon"></span> -->
+          <SvgIcon :name="tag?.meta?.icon" marginRight="3px" />
           <span @click="tagClick(tag)">{{ $t(`messages.${tag?.meta?.i18nName}`) }}</span>
           <span v-if="index > 0" class="tag-close iconfont icon-del" @click="tagClose(tag, index)"></span>
         </div>

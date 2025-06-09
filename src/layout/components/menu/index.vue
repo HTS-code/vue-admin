@@ -2,15 +2,12 @@
   <template v-for="item in menu" :key="item.path">
     <el-sub-menu :index="item.path" v-if="item.children && item.children.length > 0">
       <template #title>
-        <div
-          :class="
-            item.icon
-              ? settingStore.isCollapsed
-                ? 'iconfont-active iconfont ' + item.icon
-                : 'iconfont ' + item.icon
-              : ''
-          "
-        ></div>
+        <SvgIcon
+          :name="item.icon"
+          :marginRight="!settingStore.isCollapsed ? '3px' : 0"
+          :width="!settingStore.isCollapsed ? '1rem' : '1.5rem'"
+          :height="!settingStore.isCollapsed ? '1rem' : '1.5rem'"
+        />
         <span>{{ $t(`messages.${item.il18Name}`) }}</span>
       </template>
       <menu-tree :menu="item.children" />
@@ -18,15 +15,12 @@
 
     <template v-else>
       <el-menu-item :index="item.path">
-        <div
-          :class="
-            item.icon
-              ? settingStore.isCollapsed
-                ? 'iconfont-active iconfont ' + item.icon
-                : 'iconfont ' + item.icon
-              : ''
-          "
-        ></div>
+        <SvgIcon
+          :name="item.icon"
+          :marginRight="!settingStore.isCollapsed ? '3px' : 0"
+          :width="!settingStore.isCollapsed ? '1rem' : '1.5rem'"
+          :height="!settingStore.isCollapsed ? '1rem' : '1.5rem'"
+        />
         <span>{{ $t(`messages.${item.il18Name}`) }}</span>
       </el-menu-item>
     </template>

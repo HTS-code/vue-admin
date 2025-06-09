@@ -1,7 +1,7 @@
 <template>
   <el-dropdown trigger="hover" @command="fontCommmand">
     <div class="header-icon">
-      <span class="iconfont icon-lang"></span>
+      <SvgIcon name="lang" width="1.2rem" height="1.2rem" cursor="pointer" />
     </div>
     <template #dropdown>
       <el-dropdown-menu>

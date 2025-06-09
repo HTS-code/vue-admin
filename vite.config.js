@@ -1,14 +1,13 @@
 import { fileURLToPath, URL } from 'node:url'
+import path from 'node:path'
 
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-import Icons from 'unplugin-icons/vite'
-import IconsResolver from 'unplugin-icons/resolver'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import { FileSystemIconLoader } from 'unplugin-icons/loaders'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
@@ -22,30 +21,14 @@ export default defineConfig(({ mode }) => {
       vue(),
       VueDevTools(),
       AutoImport({
-        imports: ['vue'],
-        resolvers: [
-          ElementPlusResolver(),
-          IconsResolver({
-            prefix: 'icon',
-            customCollections: ['custom']
-          })
-        ]
+        resolvers: [ElementPlusResolver()]
       }),
       Components({
-        resolvers: [
-          ElementPlusResolver(),
-          IconsResolver({
-            prefix: 'icon',
-            customCollections: ['custom']
-          })
-        ]
+        resolvers: [ElementPlusResolver()]
       }),
-      Icons({
-        compiler: 'vue3',
-        autoInstall: true,
-        customCollections: {
-          custom: FileSystemIconLoader('src/assets/svg', svg => svg.replace(/^<svg\s/, '<svg width="1em" height="1em"'))
-        }
+      createSvgIconsPlugin({
+        iconDirs: [path.resolve(process.cwd(), 'src/assets/svg')],
+        symbolId: 'icon-[dir]-[name]'
       })
     ],
     resolve: {
