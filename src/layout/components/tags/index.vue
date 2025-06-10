@@ -1,6 +1,6 @@
 <template>
   <div class="tags" ref="tagsRef">
-    <div v-show="isArrowShow" @click="moveLeft" class="arrow-left iconfont icon-arrow-left"></div>
+    <SvgIcon v-show="isArrowShow" name="arrow-left" @click="moveLeft" cursor="pointer" class="arrow-left" />
     <div class="tags-scroll" ref="tagsScrollRef">
       <div class="tags-content" :style="`transform: translateX(${translateX}px)`">
         <div
@@ -10,14 +10,23 @@
           v-for="(tag, index) in tagList"
           :key="tag.path"
         >
-          <!-- <span class="tag-icon" :class="'iconfont ' + tag?.meta?.icon"></span> -->
           <SvgIcon :name="tag?.meta?.icon" marginRight="3px" />
           <span @click="tagClick(tag)">{{ $t(`messages.${tag?.meta?.i18nName}`) }}</span>
-          <span v-if="index > 0" class="tag-close iconfont icon-del" @click="tagClose(tag, index)"></span>
+          <div class="tag-active">
+            <SvgIcon
+              class="tag-close"
+              v-if="index > 0"
+              name="del"
+              width="10px"
+              height="10px"
+              cursor="pointer"
+              @click="tagClose(tag, index)"
+            />
+          </div>
         </div>
       </div>
     </div>
-    <div v-show="isArrowShow" @click="moveRight" class="arrow-right iconfont icon-arrow-right"></div>
+    <SvgIcon v-show="isArrowShow" name="arrow-right" cursor="pointer" @click="moveRight" class="arrow-right" />
   </div>
 </template>
 
@@ -164,15 +173,16 @@ watch(
     white-space: nowrap;
 
     .tags-content {
+      display: flex;
       white-space: nowrap;
       float: left;
       transition: transform 0.5s ease-in-out;
 
       .tags-item {
-        display: inline-block;
+        display: flex;
+        align-items: center;
         position: relative;
         height: 32px;
-        line-height: 32px;
         padding: 0 30px 0 20px;
         border: 1px solid var(--el-border-color);
         border-radius: 5px;
@@ -187,15 +197,20 @@ watch(
           margin-right: 3px;
         }
 
-        .tag-close {
+        .tag-active {
+          width: 16px;
+          position: relative;
           position: absolute;
           right: 10px;
-          font-size: 0.52rem;
+          height: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
 
-          &::before {
-            padding: 4px;
-            border-radius: 50%;
-            background-color: #f1f1f1;
+          &:hover {
+            background: #ccc;
+            color: #fff;
           }
         }
       }
