@@ -1,5 +1,5 @@
 <template>
-  <div class="header" ref="header">
+  <div class="header">
     <div class="header-left">
       <SvgIcon
         :class="settingStore.isCollapsed ? 'icon-style-form' : ''"
@@ -47,28 +47,21 @@ const flodClick = () => {
   align-items: center;
   padding: 0 10px;
 
-  .icon-style {
-    width: 1.12rem;
-    height: 1.12rem;
-    margin-right: 10px;
-    cursor: pointer;
-  }
-
-  .icon-style-form {
-    transition: all 0.3s;
-    transform: rotate(180deg);
-  }
-
-  .header-left {
+  &-left {
     display: flex;
     align-items: center;
 
+    .icon-style-form {
+      transition: all 0.3s;
+      transform: rotate(180deg);
+    }
+
     .bread-crumb {
-      margin-left: 10px;
+      margin-left: 1rem;
     }
   }
 
-  .header-right {
+  &-right {
     display: flex;
     align-items: center;
   }

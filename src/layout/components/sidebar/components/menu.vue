@@ -43,17 +43,3 @@ defineProps({
   }
 })
 </script>
-
-<style lang="scss" scoped>
-.menu-icon {
-  font-size: 1.28rem;
-}
-
-.iconfont {
-  margin-right: 5px;
-}
-
-.iconfont-active {
-  margin: 5px;
-}
-</style>

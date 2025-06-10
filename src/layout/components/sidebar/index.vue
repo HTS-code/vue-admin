@@ -1,19 +1,19 @@
 <template>
   <div class="sidebar">
-    <logo-view class="logo-view" />
+    <custom-logo class="custom-logo" />
     <el-scrollbar class="menu-scrollbar">
       <el-menu router :default-active="route.path" :unique-opened="true" :collapse="settingStore.isCollapsed">
-        <menu-tree :menu="menu" />
+        <custom-menu :menu="menu" />
       </el-menu>
     </el-scrollbar>
   </div>
 </template>
 
 <script setup>
-import MenuTree from '../menu/index.vue'
 import { useSettingStore } from '@/stores/modules/setting'
 import { useRoute } from 'vue-router'
-import logoView from '../logo/index.vue'
+import customLogo from './components/logo.vue'
+import customMenu from './components/menu.vue'
 import { ref } from 'vue'
 
 const settingStore = useSettingStore()
@@ -63,7 +63,7 @@ const menu = ref([
   box-shadow: var(--el-box-shadow);
   height: 100vh;
 
-  .logo-view {
+  .custom-logo {
     height: 52px;
     margin-left: 16px;
   }

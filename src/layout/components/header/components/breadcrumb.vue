@@ -41,14 +41,5 @@ watch(
 .breadcrumb {
   display: flex;
   align-items: center;
-
-  .breadcrumb-icon {
-    margin-right: 2px;
-  }
-}
-
-.iconfont {
-  margin-right: 3px;
-  font-size: 1rem;
 }
 </style>

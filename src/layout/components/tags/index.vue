@@ -128,7 +128,7 @@ onMounted(() => {
   })
 })
 
-// 标签点击处理（示例）
+// 标签点击处理
 const tagClick = tag => {
   router.push(tag.path)
 }
@@ -141,7 +141,7 @@ const tagClose = (tag, index) => {
   router.push(tagList.value[index - 1].path)
 }
 
-// 监听标签列表变化（如动态增减标签时）
+// 监听标签列表变化
 watch(
   () => tagList.value.length,
   () => {
@@ -160,7 +160,7 @@ watch(
   align-items: center;
   position: relative;
 
-  .tags-scroll {
+  &-scroll {
     flex: 1;
     overflow: hidden;
     position: relative;
@@ -185,10 +185,6 @@ watch(
 
         &:hover {
           color: var(--el-color-primary);
-        }
-
-        .tag-icon {
-          margin-right: 3px;
         }
 
         .tag-active {

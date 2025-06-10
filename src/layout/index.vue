@@ -1,20 +1,20 @@
 <template>
-  <div class="layout" ref="layoutRef">
-    <aside class="sidebar-container" :class="settingStore.isCollapsed ? 'sidebar-container-collapsed' : ''">
+  <div class="layout">
+    <aside class="layout-sidebar" :class="settingStore.isCollapsed ? 'layout-sidebar-collapsed' : ''">
       <sidebar-container />
     </aside>
-    <section class="main-container">
+    <section class="layout-container">
       <header>
-        <header-container :container="layoutRef" class="header-container" />
+        <header-container class="layout-container-header" />
         <tags-container
-          class="tags-container"
-          :class="settingStore.isCollapsed ? 'tags-container-collapsed' : ''"
+          class="layout-container-tags"
+          :class="settingStore.isCollapsed ? 'layout-container-tags-collapsed' : ''"
           v-show="config.ISTAGS"
         />
       </header>
 
       <section>
-        <el-scrollbar class="content-views">
+        <el-scrollbar class="layout-container-content">
           <router-view v-slot="{ Component }">
             <Transition name="slide-fade">
               <keep-alive :include="tagStore.tagList.map(item => item.name)">
@@ -35,7 +35,7 @@ import headerContainer from './components/header/index.vue'
 import tagsContainer from './components/tags/index.vue'
 import { useSettingStore } from '@/stores/modules/setting'
 import { useTagStore } from '@/stores/modules/tag'
-import { ref, watch } from 'vue'
+import { watch } from 'vue'
 
 import { storeToRefs } from 'pinia'
 import { useRoute } from 'vue-router'
@@ -46,8 +46,6 @@ const tagStore = useTagStore()
 const { tagList } = storeToRefs(tagStore)
 
 const settingStore = useSettingStore()
-
-const layoutRef = ref(null)
 
 watch(
   route,
@@ -69,10 +67,10 @@ watch(
 .layout {
   display: flex;
 
-  .sidebar-container {
+  &-sidebar {
     width: 200px;
-    height: 100vh;
     min-width: 200px;
+    height: 100vh;
     min-height: 100vh;
     max-height: 100vh;
     border-right: 1px solid var(--el-border-color);
@@ -80,34 +78,34 @@ watch(
     overflow: hidden;
   }
 
-  .sidebar-container-collapsed {
+  &-sidebar-collapsed {
     width: 65px;
     min-width: 65px;
   }
 
-  .main-container {
+  &-container {
     flex: 1;
-  }
 
-  .header-container {
-    height: 52px;
-    border-bottom: 1px solid var(--el-border-color);
-  }
+    &-header {
+      height: 52px;
+      border-bottom: 1px solid var(--el-border-color);
+    }
 
-  .tags-container {
-    height: 40px;
-    width: calc(100vw - 200px);
-    border-bottom: 1px solid var(--el-border-color);
-  }
+    &-tags {
+      height: 40px;
+      width: calc(100vw - 200px);
+      border-bottom: 1px solid var(--el-border-color);
+    }
 
-  .tags-container-collapsed {
-    width: calc(100vw - 65px);
-  }
+    &-tags-collapsed {
+      width: calc(100vw - 65px);
+    }
 
-  .content-views {
-    padding: 10px;
-    min-height: calc(100vh - 92px);
-    box-sizing: border-box;
+    &-content {
+      padding: 10px;
+      min-height: calc(100vh - 92px);
+      box-sizing: border-box;
+    }
   }
 }
 </style>

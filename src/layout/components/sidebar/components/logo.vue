@@ -1,7 +1,7 @@
 <template>
   <div class="logo">
     <img class="logo-img" src="@/assets/logo.svg" alt="logo" />
-    <h1 class="animate__animated animate__fadeInLeft" v-show="!settingStore.isCollapsed">
+    <h1 v-show="!settingStore.isCollapsed">
       {{ $t('messages.title') }}
     </h1>
   </div>
@@ -18,7 +18,7 @@ const settingStore = useSettingStore()
   display: flex;
   align-items: center;
 
-  .logo-img {
+  &-img {
     width: 32px;
     margin-right: 5px;
   }
