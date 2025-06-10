@@ -7,20 +7,21 @@
           class="tags-item"
           :class="index === activeIndex ? 'tags-item-active' : ''"
           ref="tagsItemRef"
+          @click="tagClick(tag)"
           v-for="(tag, index) in tagList"
           :key="tag.path"
         >
           <SvgIcon :name="tag?.meta?.icon" marginRight="3px" />
-          <span @click="tagClick(tag)">{{ $t(`messages.${tag?.meta?.i18nName}`) }}</span>
-          <div class="tag-active">
+          <span>{{ $t(`messages.${tag?.meta?.i18nName}`) }}</span>
+          <div :class="index > 0 ? 'tag-active' : ''">
             <SvgIcon
               class="tag-close"
               v-if="index > 0"
               name="del"
-              width="10px"
-              height="10px"
+              width="12px"
+              height="12px"
               cursor="pointer"
-              @click="tagClose(tag, index)"
+              @click.stop="tagClose(tag, index)"
             />
           </div>
         </div>
