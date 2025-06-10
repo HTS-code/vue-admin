@@ -6,14 +6,13 @@
         name="collapsed"
         width="1.5rem"
         height="1.5rem"
-        cursor="pointer"
         @click="flodClick"
       />
       <CoustomBreadcrumb class="bread-crumb" v-if="config.ISBREADCRUMB" />
     </div>
     <div class="header-right">
-      <div class="header-icon">
-        <SvgIcon name="fulll" width="1.2rem" height="1.2rem" cursor="pointer" />
+      <div class="header-icon" v-fullscreen>
+        <SvgIcon name="fulll" />
       </div>
       <CustomFontSize />
       <CustomLang />
@@ -26,7 +25,7 @@
 
 <script setup>
 import { useSettingStore } from '@/stores/modules/setting'
-import CoustomBreadcrumb from '../breadcrumb/index.vue'
+import CoustomBreadcrumb from './components/breadcrumb.vue'
 import CustomFontSize from './components/font.vue'
 import CustomLang from './components/lang.vue'
 import CustomTheme from './components/theme.vue'

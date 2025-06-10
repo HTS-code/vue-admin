@@ -3,7 +3,7 @@
     <template #reference>
       <el-badge :value="3" :max="9" :offset="[-12, 17]">
         <div class="header-icon">
-          <SvgIcon name="message" width="1.2rem" height="1.2rem" cursor="pointer" />
+          <SvgIcon name="message" />
         </div>
       </el-badge>
     </template>

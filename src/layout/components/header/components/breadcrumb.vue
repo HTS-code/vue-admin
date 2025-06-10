@@ -4,7 +4,7 @@
       <el-breadcrumb-item v-for="item in breadCrumbList" :key="item.path">
         <template #default>
           <div class="breadcrumb">
-            <SvgIcon :name="item?.meta?.icon" marginRight="3px" />
+            <SvgIcon v-if="config.ISBREADCRUMBICON" :name="item?.meta?.icon" marginRight="3px" cursor="default" />
             <span>{{ $t(`messages.${item?.meta?.i18nName}`) }}</span>
           </div>
         </template>
@@ -16,6 +16,7 @@
 <script setup>
 import { watch, ref } from 'vue'
 import { useRoute } from 'vue-router'
+import config from '@/config'
 
 const route = useRoute()
 

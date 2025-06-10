@@ -1,6 +1,6 @@
 <template>
   <div class="tags" ref="tagsRef">
-    <SvgIcon v-show="isArrowShow" name="arrow-left" @click="moveLeft" cursor="pointer" class="arrow-left" />
+    <SvgIcon v-show="isArrowShow" name="arrow-left" @click="moveLeft" class="arrow-left" />
     <div class="tags-scroll" ref="tagsScrollRef">
       <div class="tags-content" :style="`transform: translateX(${translateX}px)`">
         <div
@@ -11,23 +11,15 @@
           v-for="(tag, index) in tagList"
           :key="tag.path"
         >
-          <SvgIcon :name="tag?.meta?.icon" marginRight="3px" />
+          <SvgIcon v-if="config.ISTAGSICON" :name="tag?.meta?.icon" marginRight="3px" />
           <span>{{ $t(`messages.${tag?.meta?.i18nName}`) }}</span>
           <div :class="index > 0 ? 'tag-active' : ''">
-            <SvgIcon
-              class="tag-close"
-              v-if="index > 0"
-              name="del"
-              width="12px"
-              height="12px"
-              cursor="pointer"
-              @click.stop="tagClose(tag, index)"
-            />
+            <SvgIcon class="tag-close" v-if="index > 0" name="del" @click.stop="tagClose(tag, index)" />
           </div>
         </div>
       </div>
     </div>
-    <SvgIcon v-show="isArrowShow" name="arrow-right" cursor="pointer" @click="moveRight" class="arrow-right" />
+    <SvgIcon v-show="isArrowShow" name="arrow-right" @click="moveRight" class="arrow-right" />
   </div>
 </template>
 
@@ -35,6 +27,7 @@
 import { useTagStore } from '@/stores/modules/tag'
 import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import config from '@/config'
 
 const tagStore = useTagStore()
 
@@ -184,7 +177,7 @@ watch(
         align-items: center;
         position: relative;
         height: 32px;
-        padding: 0 30px 0 20px;
+        padding: 0 20px;
         border: 1px solid var(--el-border-color);
         border-radius: 5px;
         margin: 0 5px;
@@ -201,8 +194,7 @@ watch(
         .tag-active {
           width: 16px;
           position: relative;
-          position: absolute;
-          right: 10px;
+          right: -10px;
           height: 16px;
           display: flex;
           align-items: center;

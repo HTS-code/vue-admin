@@ -4,7 +4,7 @@
       <template #title>
         <SvgIcon
           :name="item.icon"
-          :marginRight="!settingStore.isCollapsed ? '3px' : 0"
+          :marginRight="!settingStore.isCollapsed ? '3px' : '0px'"
           :width="!settingStore.isCollapsed ? '1rem' : '1.5rem'"
           :height="!settingStore.isCollapsed ? '1rem' : '1.5rem'"
         />
@@ -17,7 +17,7 @@
       <el-menu-item :index="item.path">
         <SvgIcon
           :name="item.icon"
-          :marginRight="!settingStore.isCollapsed ? '3px' : 0"
+          :marginRight="!settingStore.isCollapsed ? '3px' : '0px'"
           :width="!settingStore.isCollapsed ? '1rem' : '1.5rem'"
           :height="!settingStore.isCollapsed ? '1rem' : '1.5rem'"
         />

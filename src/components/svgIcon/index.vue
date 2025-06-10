@@ -39,7 +39,7 @@ const props = defineProps({
   },
   cursor: {
     type: String,
-    default: 'default'
+    default: 'pointer'
   }
 })
 
