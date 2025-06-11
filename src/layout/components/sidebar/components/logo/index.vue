@@ -1,6 +1,6 @@
 <template>
   <div class="logo">
-    <img class="logo-img" src="@/assets/logo.svg" alt="logo" />
+    <SvgIcon name="logo" width="2.1rem" height="2.1rem" marginRight="5px" />
     <h1 v-show="!settingStore.isCollapsed">
       {{ $t('messages.title') }}
     </h1>
@@ -14,17 +14,5 @@ const settingStore = useSettingStore()
 </script>
 
 <style lang="scss" scoped>
-.logo {
-  display: flex;
-  align-items: center;
-
-  &-img {
-    width: 32px;
-    margin-right: 5px;
-  }
-
-  h1 {
-    font-size: 1.2rem;
-  }
-}
+@use './index.scss' as *;
 </style>

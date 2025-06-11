@@ -38,8 +38,5 @@ watch(
 </script>
 
 <style lang="scss" scoped>
-.breadcrumb {
-  display: flex;
-  align-items: center;
-}
+@use './index.scss' as *;
 </style>

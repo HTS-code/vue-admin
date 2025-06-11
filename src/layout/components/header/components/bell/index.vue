@@ -35,9 +35,5 @@ const clearBell = () => {
 </script>
 
 <style lang="scss" scoped>
-.clear-bell {
-  color: var(--el-color-primary);
-  cursor: pointer;
-  text-align: center;
-}
+@use './index.scss' as *;
 </style>

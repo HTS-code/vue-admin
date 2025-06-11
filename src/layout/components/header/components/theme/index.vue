@@ -91,10 +91,5 @@ const drawerClose = () => {
 </script>
 
 <style lang="scss" scoped>
-.cell {
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+@use './index.scss' as *;
 </style>

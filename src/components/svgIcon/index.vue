@@ -45,9 +45,3 @@ const props = defineProps({
 
 const symbolId = computed(() => `#${props.prefix}-${props.name}`)
 </script>
-
-<style lang="scss" scoped>
-.svg-icon {
-  margin-top: 1.5px;
-}
-</style>

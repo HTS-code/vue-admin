@@ -41,17 +41,5 @@ const logout = () => {
 </script>
 
 <style lang="scss" scoped>
-.el-dropdown-link {
-  display: flex;
-  align-items: center;
-  margin-left: 15px;
-  cursor: pointer;
-
-  .avatar-img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-right: 5px;
-  }
-}
+@use './index.scss' as *;
 </style>

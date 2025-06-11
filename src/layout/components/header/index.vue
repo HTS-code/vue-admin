@@ -25,12 +25,12 @@
 
 <script setup>
 import { useSettingStore } from '@/stores/modules/setting'
-import CoustomBreadcrumb from './components/breadcrumb.vue'
-import CustomFontSize from './components/font.vue'
-import CustomLang from './components/lang.vue'
-import CustomTheme from './components/theme.vue'
-import CustomBell from './components/bell.vue'
-import CustomSetting from './components/setting.vue'
+import CoustomBreadcrumb from './components/breadcrumb/index.vue'
+import CustomFontSize from './components/font/index.vue'
+import CustomLang from './components/lang/index.vue'
+import CustomTheme from './components/theme/index.vue'
+import CustomBell from './components/bell/index.vue'
+import CustomSetting from './components/setting/index.vue'
 import config from '@/config'
 
 const settingStore = useSettingStore()
@@ -41,29 +41,5 @@ const flodClick = () => {
 </script>
 
 <style lang="scss" scoped>
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10px;
-
-  &-left {
-    display: flex;
-    align-items: center;
-
-    .icon-style-form {
-      transition: all 0.3s;
-      transform: rotate(180deg);
-    }
-
-    .bread-crumb {
-      margin-left: 1rem;
-    }
-  }
-
-  &-right {
-    display: flex;
-    align-items: center;
-  }
-}
+@use './index.scss' as *;
 </style>
