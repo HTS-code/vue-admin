@@ -1,6 +1,8 @@
 <template>
   <div class="tags" ref="tagsRef">
-    <SvgIcon v-show="isArrowShow" name="arrow-left" @click="moveLeft" class="arrow-left" />
+    <div class="arrow-left" v-show="isArrowShow">
+      <SvgIcon name="arrow-left" @click="moveLeft" />
+    </div>
     <div class="tags-scroll" ref="tagsScrollRef">
       <div class="tags-content" :style="`transform: translateX(${translateX}px)`">
         <div
@@ -19,7 +21,9 @@
         </div>
       </div>
     </div>
-    <SvgIcon v-show="isArrowShow" name="arrow-right" @click="moveRight" class="arrow-right" />
+    <div class="arrow-right" v-show="isArrowShow">
+      <SvgIcon name="arrow-right" @click="moveRight" />
+    </div>
   </div>
 </template>
 
