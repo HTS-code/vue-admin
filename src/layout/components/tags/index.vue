@@ -25,11 +25,13 @@
 
 <script setup>
 import { useTagStore } from '@/stores/modules/tag'
-import { computed, nextTick, onMounted, ref, watch } from 'vue'
+import { useSettingStore } from '@/stores/modules/setting'
+import { computed, nextTick, onMounted, onBeforeUnmount, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import config from '@/config'
 
 const tagStore = useTagStore()
+const settingsStore = useSettingStore()
 
 const route = useRoute()
 const router = useRouter()
@@ -95,11 +97,25 @@ const moveRight = () => {
   checkBoundary()
 }
 
-// 边界检测（用于窗口resize后修正位置）
+// 边界检测
 const checkBoundary = () => {
   const maxTranslate = Math.min(0, tagsWidth.value - tagScrollWidth.value)
   translateX.value = Math.max(translateX.value, maxTranslate)
   translateX.value = Math.min(translateX.value, 0)
+}
+
+const pageResize = () => {
+  if (document.body.clientWidth < 768) {
+    settingsStore.isCollapsed = true
+  } else {
+    settingsStore.isCollapsed = false
+  }
+  initTags()
+  checkBoundary()
+  const index = tagList.value.findIndex(item => item.path === route.path)
+  if (index > -1) {
+    moveView(index)
+  }
 }
 
 // 监听路由变化自动滚动
@@ -118,14 +134,11 @@ watch(
 onMounted(() => {
   initTags()
   activeIndex.value = tagList.value.findIndex(item => item.path === route.path)
-  window.addEventListener('resize', () => {
-    initTags()
-    checkBoundary()
-    const index = tagList.value.findIndex(item => item.path === route.path)
-    if (index > -1) {
-      moveView(index)
-    }
-  })
+  window.addEventListener('resize', pageResize)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', pageResize)
 })
 
 // 标签点击处理

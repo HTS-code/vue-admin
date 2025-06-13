@@ -6,15 +6,17 @@
   align-items: center;
   overflow: hidden;
   &-container {
+    flex: 1;
     display: flex;
+    justify-content: center;
     &-left {
-      width: 40rem;
       display: flex;
       align-items: center;
       justify-content: flex-end;
     }
     &-right {
-      width: 40rem;
+      max-width: 40rem;
+      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
