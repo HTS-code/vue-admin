@@ -43,13 +43,13 @@
 <script setup>
 import { useUserStore } from '@/stores/modules/user'
 import { useRouter } from 'vue-router'
-import { ref, reactive } from 'vue'
+import { useTemplateRef, reactive } from 'vue'
 import { User, Lock } from '@element-plus/icons-vue'
 
 const userStore = useUserStore()
 const router = useRouter()
 
-const ruleFormRef = ref(null)
+const ruleFormRef = useTemplateRef('ruleFormRef')
 const ruleForm = reactive({
   username: '',
   password: ''
