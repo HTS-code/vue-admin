@@ -1,37 +1,49 @@
 <template>
-  <div class="index">
-    <div class="echart-box" ref="echartBox" style="width: 500px; height: 500px"></div>
+  <div class="dashboard">
+    <div class="dashboard-box">
+      <div class="dashboard-box-item weixin">
+        <div class="dashboard-box-item-svg">
+          <SvgIcon name="weixin" width="50" height="50" marginRight="10px" />
+        </div>
+        <div class="dashboard-box-item-content">
+          <div class="dashboard-box-item-value">1000</div>
+          <div class="dashboard-box-item-title">微信</div>
+        </div>
+      </div>
+      <div class="dashboard-box-item qq">
+        <div class="dashboard-box-item-svg">
+          <SvgIcon name="qq" width="50" height="50" marginRight="10px" />
+        </div>
+        <div class="dashboard-box-item-content">
+          <div class="dashboard-box-item-value">320</div>
+          <div class="dashboard-box-item-title">QQ</div>
+        </div>
+      </div>
+      <div class="dashboard-box-item douyin">
+        <div class="dashboard-box-item-svg">
+          <SvgIcon name="douyin" width="50" height="50" marginRight="10px" />
+        </div>
+        <div class="dashboard-box-item-content">
+          <div class="dashboard-box-item-value">867</div>
+          <div class="dashboard-box-item-title">抖音</div>
+        </div>
+      </div>
+      <div class="dashboard-box-item weibo">
+        <div class="dashboard-box-item-svg">
+          <SvgIcon name="weibo" width="50" height="50" marginRight="10px" />
+        </div>
+        <div class="dashboard-box-item-content">
+          <div class="dashboard-box-item-value">382</div>
+          <div class="dashboard-box-item-title">微博</div>
+        </div>
+      </div>
+    </div>
+    <bar-echart />
   </div>
 </template>
 
 <script setup>
-import * as echarts from 'echarts'
-import { ref, onMounted } from 'vue'
-
-const echartBox = ref(null)
-
-onMounted(() => {
-  // 基于准备好的dom，初始化echarts实例
-  const myChart = echarts.init(echartBox.value)
-  // 绘制图表
-  myChart.setOption({
-    title: {
-      text: 'ECharts 入门示例'
-    },
-    tooltip: {},
-    xAxis: {
-      data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
-    },
-    yAxis: {},
-    series: [
-      {
-        name: '销量',
-        type: 'bar',
-        data: [5, 20, 36, 10, 10, 20]
-      }
-    ]
-  })
-})
+import barEchart from './bar/index.vue'
 </script>
 
 <style lang="scss" scoped>
