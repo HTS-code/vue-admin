@@ -46,12 +46,7 @@ const initChart = () => {
     xAxis: {
       data: ['驯鹿', '火箭', '飞机', '高铁', '轮船', '汽车', '跑步', '步行'],
       axisTick: { show: false },
-      axisLine: { show: false },
-      axisLabel: {
-        textStyle: {
-          color: '#e54035'
-        }
-      }
+      axisLine: { show: false }
     },
     yAxis: {
       splitLine: { show: false },
@@ -67,14 +62,6 @@ const initChart = () => {
         barCategoryGap: '-130%',
         // symbol: 'path://M0,10 L10,10 L5,0 L0,10 z',
         symbol: 'path://M0,10 L10,10 C5.5,10 5.5,5 5,0 C4.5,5 4.5,10 0,10 z',
-        itemStyle: {
-          normal: {
-            opacity: 0.5
-          },
-          emphasis: {
-            opacity: 1
-          }
-        },
         data: [123, 60, 25, 18, 12, 9, 2, 1],
         z: 10
       },

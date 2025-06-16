@@ -96,32 +96,6 @@ const initChart = () => {
         type: 'scatter',
         symbolSize: function (data) {
           return Math.sqrt(data[2]) / 5e2
-        },
-        label: {
-          emphasis: {
-            show: true,
-            formatter: function (param) {
-              return param.data[3]
-            },
-            position: 'top'
-          }
-        },
-        itemStyle: {
-          normal: {
-            shadowBlur: 10,
-            shadowColor: 'rgba(120, 36, 50, 0.5)',
-            shadowOffsetY: 5,
-            color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [
-              {
-                offset: 0,
-                color: 'rgb(251, 118, 123)'
-              },
-              {
-                offset: 1,
-                color: 'rgb(204, 46, 72)'
-              }
-            ])
-          }
         }
       },
       {
@@ -130,32 +104,6 @@ const initChart = () => {
         type: 'scatter',
         symbolSize: function (data) {
           return Math.sqrt(data[2]) / 5e2
-        },
-        label: {
-          emphasis: {
-            show: true,
-            formatter: function (param) {
-              return param.data[3]
-            },
-            position: 'top'
-          }
-        },
-        itemStyle: {
-          normal: {
-            shadowBlur: 10,
-            shadowColor: 'rgba(25, 100, 150, 0.5)',
-            shadowOffsetY: 5,
-            color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [
-              {
-                offset: 0,
-                color: 'rgb(129, 227, 238)'
-              },
-              {
-                offset: 1,
-                color: 'rgb(25, 183, 207)'
-              }
-            ])
-          }
         }
       }
     ]
