@@ -39,11 +39,30 @@
       </div>
     </div>
     <bar-echart />
+
+    <div class="echart-list">
+      <div class="echart-list-item">
+        <line-echart />
+      </div>
+      <div class="echart-list-item">
+        <pie-echart />
+      </div>
+      <div class="echart-list-item">
+        <scatter-echart />
+      </div>
+      <div class="echart-list-item">
+        <pictorial-bar-echart />
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
 import barEchart from './bar/index.vue'
+import lineEchart from './line/index.vue'
+import pieEchart from './pie/index.vue'
+import scatterEchart from './scatter/index.vue'
+import pictorialBarEchart from './pictorial-bar/index.vue'
 </script>
 
 <style lang="scss" scoped>
