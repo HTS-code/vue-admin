@@ -60,7 +60,7 @@ const settingStore = useSettingStore()
 
 const scrollToTop = () => {
   scrollBarRef.value.scrollTo({
-    top: 10,
+    top: 0,
     behavior: 'smooth'
   })
 }
