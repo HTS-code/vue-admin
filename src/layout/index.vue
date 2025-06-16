@@ -22,6 +22,7 @@
               </keep-alive>
             </Transition>
           </router-view>
+          <footer-container />
         </el-scrollbar>
       </section>
 
@@ -42,6 +43,7 @@ import config from '@/config'
 import sidebarContainer from './components/sidebar/index.vue'
 import headerContainer from './components/header/index.vue'
 import tagsContainer from './components/tags/index.vue'
+import footerContainer from './components/footer/index.vue'
 import { useSettingStore } from '@/stores/modules/setting'
 import { useTagStore } from '@/stores/modules/tag'
 import { watch, useTemplateRef, onMounted, ref } from 'vue'

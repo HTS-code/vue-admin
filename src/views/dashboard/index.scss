@@ -33,18 +33,17 @@
   }
 
   .echart-list {
-    height: 320px;
     margin-top: 20px;
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
     &-item {
+      height: 320px;
       width: calc(50% - 5px);
       background-color: var(--el-bg-color);
       padding: 10px;
       box-sizing: border-box;
       border-radius: 10px;
-      height: 100%;
     }
   }
 }
