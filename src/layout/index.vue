@@ -13,8 +13,8 @@
         />
       </header>
 
-      <section>
-        <el-scrollbar ref="scrollBarRef" class="layout-container-content" @scroll="handleScroll">
+      <el-scrollbar ref="scrollBarRef" class="layout-container-content" @scroll="handleScroll">
+        <section class="layout-container-content-grow">
           <router-view v-slot="{ Component }">
             <Transition name="slide-fade">
               <keep-alive :include="tagStore.tagList.map(item => item.name)">
@@ -22,9 +22,9 @@
               </keep-alive>
             </Transition>
           </router-view>
-          <footer-container />
-        </el-scrollbar>
-      </section>
+        </section>
+        <footer-container />
+      </el-scrollbar>
 
       <SvgIcon
         name="scrollTop"

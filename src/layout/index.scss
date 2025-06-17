@@ -1,4 +1,5 @@
 .layout {
+  height: 100vh;
   display: flex;
 
   &-sidebar {
@@ -16,6 +17,8 @@
   }
 
   &-container {
+    display: flex;
+    flex-direction: column;
     flex: 1;
 
     &-header {
@@ -34,10 +37,15 @@
     }
 
     &-content {
+      overflow-x: hidden;
+      overflow-y: auto;
       background-color: var(--el-bg-color-page);
-      padding: 10px;
-      height: calc(100vh - 105px);
       box-sizing: border-box;
+
+      &-grow {
+        padding: 10px;
+        min-height: calc(100% - 40px);
+      }
     }
   }
 
