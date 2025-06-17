@@ -2,7 +2,7 @@
   <div class="login">
     <div class="login-container">
       <div class="login-container-left">
-        <SvgIcon name="login" width="36rem" height="28rem" />
+        <SvgIcon name="login" width="38rem" height="30rem" />
       </div>
       <div class="login-container-right">
         <div class="login-content">

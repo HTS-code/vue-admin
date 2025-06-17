@@ -66,7 +66,10 @@ const initChart = () => {
   chartRef.setOption({
     legend: {
       right: 10,
-      data: ['1990', '2015']
+      data: ['1990', '2015'],
+      textStyle: {
+        color: '#666'
+      }
     },
     xAxis: {
       splitLine: {

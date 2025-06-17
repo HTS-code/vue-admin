@@ -23,7 +23,10 @@ const initChart = () => {
       trigger: 'axis'
     },
     legend: {
-      data: ['邮件营销', '联盟广告', '视频广告']
+      data: ['邮件营销', '联盟广告', '视频广告'],
+      textStyle: {
+        color: '#666'
+      }
     },
     grid: {
       left: '3%',
