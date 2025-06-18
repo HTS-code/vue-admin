@@ -13,12 +13,14 @@ const zhCN = {
     themeColor: '主题色',
     weaknessMode: '色弱模式',
     greyMode: '灰色模式',
+    clear: '清除消息',
     tadHome: '首页',
     tadSysManagement: '系统管理',
     tadUserManage: '用户管理',
     tadRoleManage: '角色管理',
     tadAbout: '关于',
-    clear: '清除消息'
+    tadComponents: '组件',
+    tadComponentsMarkdown: 'Markdown'
   }
 }
 export default zhCN

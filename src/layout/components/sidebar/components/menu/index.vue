@@ -4,9 +4,9 @@
       <template #title>
         <SvgIcon
           :name="item.icon"
-          :marginRight="!settingStore.isCollapsed ? '3px' : '0px'"
-          :width="!settingStore.isCollapsed ? '1rem' : '1.5rem'"
-          :height="!settingStore.isCollapsed ? '1rem' : '1.5rem'"
+          marginRight="3px"
+          :width="!settingStore.isCollapsed ? '1rem' : '1.4rem'"
+          :height="!settingStore.isCollapsed ? '1rem' : '1.4rem'"
         />
         <span>{{ $t(`messages.${item.il18Name}`) }}</span>
       </template>
@@ -17,9 +17,9 @@
       <el-menu-item :index="item.path">
         <SvgIcon
           :name="item.icon"
-          :marginRight="!settingStore.isCollapsed ? '3px' : '0px'"
-          :width="!settingStore.isCollapsed ? '1rem' : '1.5rem'"
-          :height="!settingStore.isCollapsed ? '1rem' : '1.5rem'"
+          marginRight="3px"
+          :width="!settingStore.isCollapsed ? '1rem' : '1.4rem'"
+          :height="!settingStore.isCollapsed ? '1rem' : '1.4rem'"
         />
         <span>{{ $t(`messages.${item.il18Name}`) }}</span>
       </el-menu-item>

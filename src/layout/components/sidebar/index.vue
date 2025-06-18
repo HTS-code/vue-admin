@@ -23,6 +23,23 @@ const route = useRoute()
 const menu = ref([
   { path: '/dashboard', icon: 'house', il18Name: 'tadHome', name: '首页', id: '01', children: [] },
   {
+    path: '/components',
+    icon: 'components',
+    name: '组件',
+    il18Name: 'tadComponents',
+    id: '02',
+    children: [
+      {
+        path: '/components/markdown',
+        icon: 'markdown',
+        name: 'Markdown',
+        il18Name: 'tadComponentsMarkdown',
+        id: '021',
+        children: []
+      }
+    ]
+  },
+  {
     path: '/system',
     icon: 'system',
     name: '系统管理',
