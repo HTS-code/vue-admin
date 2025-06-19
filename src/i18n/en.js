@@ -20,7 +20,8 @@ const en = {
     tadRoleManage: 'Role Manage',
     tadAbout: 'About',
     tadComponents: 'Components',
-    tadComponentsMarkdown: 'Markdown'
+    tadComponentsMarkdown: 'Markdown',
+    tadComponentsEditor: 'Editor'
   }
 }
 export default en

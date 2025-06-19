@@ -20,7 +20,8 @@ const zhCN = {
     tadRoleManage: '角色管理',
     tadAbout: '关于',
     tadComponents: '组件',
-    tadComponentsMarkdown: 'Markdown'
+    tadComponentsMarkdown: 'Markdown',
+    tadComponentsEditor: '富文本'
   }
 }
 export default zhCN

@@ -14,6 +14,12 @@ const route = [
         meta: { title: 'Markdown', i18nName: 'tadComponentsMarkdown', icon: 'markdown' },
         name: 'componentsMarkdown',
         component: () => import('@/views/components/markdown/index.vue')
+      },
+      {
+        path: 'editor',
+        meta: { title: '富文本', i18nName: 'tadComponentsEditor', icon: 'editor' },
+        name: 'componentsEditor',
+        component: () => import('@/views/components/editor/index.vue')
       }
     ]
   }

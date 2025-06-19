@@ -25,15 +25,23 @@ const menu = ref([
   {
     path: '/components',
     icon: 'components',
-    name: '组件',
+    name: 'Components',
     il18Name: 'tadComponents',
     id: '02',
     children: [
       {
         path: '/components/markdown',
         icon: 'markdown',
-        name: 'Markdown',
+        name: 'ComponentsMarkdown',
         il18Name: 'tadComponentsMarkdown',
+        id: '021',
+        children: []
+      },
+      {
+        path: '/components/editor',
+        icon: 'editor',
+        name: 'ComponentsEditor',
+        il18Name: 'tadComponentsEditor',
         id: '021',
         children: []
       }
