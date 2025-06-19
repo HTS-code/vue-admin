@@ -30,6 +30,9 @@
 </template>
 
 <script setup>
+defineOptions({
+  name: 'ComponentsMarkdown'
+})
 import { ref, computed } from 'vue'
 import { MdEditor } from 'md-editor-v3'
 import 'md-editor-v3/lib/style.css'
