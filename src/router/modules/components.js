@@ -20,6 +20,12 @@ const route = [
         meta: { title: '富文本', i18nName: 'tadComponentsEditor', icon: 'editor' },
         name: 'componentsEditor',
         component: () => import('@/views/components/editor/index.vue')
+      },
+      {
+        path: 'cropper',
+        meta: { title: '图片裁剪', i18nName: 'tadComponentsCropper', icon: 'cropper' },
+        name: 'componentsCropper',
+        component: () => import('@/views/components/cropper/index.vue')
       }
     ]
   }

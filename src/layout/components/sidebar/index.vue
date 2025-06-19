@@ -42,7 +42,15 @@ const menu = ref([
         icon: 'editor',
         name: 'ComponentsEditor',
         il18Name: 'tadComponentsEditor',
-        id: '021',
+        id: '022',
+        children: []
+      },
+      {
+        path: '/components/cropper',
+        icon: 'cropper',
+        name: 'ComponentsCropper',
+        il18Name: 'tadComponentsCropper',
+        id: '023',
         children: []
       }
     ]

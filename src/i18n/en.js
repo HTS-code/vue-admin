@@ -21,7 +21,8 @@ const en = {
     tadAbout: 'About',
     tadComponents: 'Components',
     tadComponentsMarkdown: 'Markdown',
-    tadComponentsEditor: 'Editor'
+    tadComponentsEditor: 'Editor',
+    tadComponentsCropper: 'Image Cropper'
   }
 }
 export default en
