@@ -1,3 +1,7 @@
+.describe {
+  padding-bottom: 20px;
+}
+
 .cropper-box {
   display: flex;
   &-left {
@@ -11,6 +15,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .preview {
+      cursor: pointer;
+      position: relative;
+    }
   }
 }
 
