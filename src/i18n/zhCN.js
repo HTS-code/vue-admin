@@ -22,7 +22,8 @@ const zhCN = {
     tadComponents: '组件',
     tadComponentsMarkdown: 'Markdown',
     tadComponentsEditor: '富文本',
-    tadComponentsCropper: '图片裁剪'
+    tadComponentsCropper: '图片裁剪',
+    tadComponentsVideo: '视频直播'
   }
 }
 export default zhCN

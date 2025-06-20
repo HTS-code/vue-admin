@@ -1,0 +1,16 @@
+.describe {
+  padding-bottom: 20px;
+}
+
+.video {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  &-item {
+    &-title {
+      margin-bottom: 10px;
+      font-size: 1.14rem;
+    }
+  }
+}

@@ -90,7 +90,7 @@ watch(
     nextTick(() => {
       setTimeout(() => {
         scrollBarRef.value.update()
-      }, 100)
+      }, 1000)
     })
   },
   { deep: true, immediate: true }

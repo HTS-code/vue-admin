@@ -52,6 +52,14 @@ const menu = ref([
         il18Name: 'tadComponentsCropper',
         id: '023',
         children: []
+      },
+      {
+        path: '/components/video',
+        icon: 'video',
+        name: 'ComponentsVideo',
+        il18Name: 'tadComponentsVideo',
+        id: '024',
+        children: []
       }
     ]
   },
