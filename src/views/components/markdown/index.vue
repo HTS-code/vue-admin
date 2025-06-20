@@ -7,7 +7,9 @@
     </template>
 
     <div class="describe">
-      采用开源组件<el-link type="primary">md-editor-v3</el-link>，代码位置：src/views/components/markdown
+      采用开源组件
+      <el-link type="primary" href="https://imzbf.github.io/md-editor-v3/zh-CN">md-editor-v3</el-link>
+      ，代码位置：src/views/components/markdown
     </div>
 
     <MdEditor
