@@ -24,7 +24,8 @@ const zhCN = {
     tadComponentsEditor: '富文本',
     tadComponentsCropper: '图片裁剪',
     tadComponentsVideo: '视频直播',
-    tadComponentsPinYin: '汉语拼音'
+    tadComponentsPinYin: '汉语拼音',
+    tadComponentsMap: '地图'
   }
 }
 export default zhCN

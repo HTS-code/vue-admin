@@ -38,6 +38,12 @@ const route = [
         meta: { title: '汉语拼音', i18nName: 'tadComponentsPinYin', icon: 'pinyin' },
         name: 'componentsPinYin',
         component: () => import('@/views/components/pinyin/index.vue')
+      },
+      {
+        path: 'map',
+        meta: { title: '地图', i18nName: 'tadComponentsMap', icon: 'map' },
+        name: 'componentsMap',
+        component: () => import('@/views/components/map/index.vue')
       }
     ]
   }

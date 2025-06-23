@@ -68,6 +68,14 @@ const menu = ref([
         il18Name: 'tadComponentsPinYin',
         id: '025',
         children: []
+      },
+      {
+        path: '/components/map',
+        icon: 'map',
+        name: 'ComponentsMap',
+        il18Name: 'tadComponentsMap',
+        id: '026',
+        children: []
       }
     ]
   },
