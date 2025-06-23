@@ -60,6 +60,14 @@ const menu = ref([
         il18Name: 'tadComponentsVideo',
         id: '024',
         children: []
+      },
+      {
+        path: '/components/pinyin',
+        icon: 'pinyin',
+        name: 'ComponentsPinYin',
+        il18Name: 'tadComponentsPinYin',
+        id: '025',
+        children: []
       }
     ]
   },

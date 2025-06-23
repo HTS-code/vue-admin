@@ -23,7 +23,8 @@ const en = {
     tadComponentsMarkdown: 'Markdown',
     tadComponentsEditor: 'Editor',
     tadComponentsCropper: 'Image Cropper',
-    tadComponentsVideo: 'Video'
+    tadComponentsVideo: 'Video',
+    tadComponentsPinYin: 'PinYin'
   }
 }
 export default en

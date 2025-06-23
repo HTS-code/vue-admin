@@ -1,0 +1,21 @@
+.describe {
+  padding-bottom: 20px;
+}
+
+.pinyin-content {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+
+  :deep(.py-pinyin-item) {
+    font-size: 1rem;
+  }
+}
+
+.custom {
+  :deep(.py-chinese-item) {
+    color: blue;
+  }
+  :deep(.py-pinyin-item) {
+    color: red;
+  }
+}

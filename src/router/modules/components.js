@@ -32,6 +32,12 @@ const route = [
         meta: { title: '视频直播', i18nName: 'tadComponentsVideo', icon: 'video' },
         name: 'componentsVideo',
         component: () => import('@/views/components/video/index.vue')
+      },
+      {
+        path: 'pinyin',
+        meta: { title: '汉语拼音', i18nName: 'tadComponentsPinYin', icon: 'pinyin' },
+        name: 'componentsPinYin',
+        component: () => import('@/views/components/pinyin/index.vue')
       }
     ]
   }

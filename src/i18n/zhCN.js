@@ -23,7 +23,8 @@ const zhCN = {
     tadComponentsMarkdown: 'Markdown',
     tadComponentsEditor: '富文本',
     tadComponentsCropper: '图片裁剪',
-    tadComponentsVideo: '视频直播'
+    tadComponentsVideo: '视频直播',
+    tadComponentsPinYin: '汉语拼音'
   }
 }
 export default zhCN
