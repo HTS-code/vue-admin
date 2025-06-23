@@ -24,6 +24,7 @@ defineOptions({
 import { onMounted, onUnmounted, ref, shallowRef } from 'vue'
 import AMapLoader from '@amap/amap-jsapi-loader'
 import { ElMessage } from 'element-plus'
+import { getSvgUrl } from '@/utils'
 
 let map = shallowRef(null)
 
@@ -41,7 +42,7 @@ const getMarker = item => {
     position: item.position, //位置
     offset: new AMap.Pixel(-28, -56),
     title: '测试的',
-    icon: 'src/assets/svg/sign_online.svg'
+    icon: getSvgUrl('sign_online.svg')
   })
 
   marker.on('click', onMarkerClick)
