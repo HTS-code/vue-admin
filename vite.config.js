@@ -8,6 +8,8 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import viteCompression from 'vite-plugin-compression'
+import { visualizer } from 'rollup-plugin-visualizer'
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
@@ -29,7 +31,15 @@ export default defineConfig(({ mode }) => {
       createSvgIconsPlugin({
         iconDirs: [path.resolve(process.cwd(), 'src/assets/svg')],
         symbolId: 'icon-[dir]-[name]'
-      })
+      }),
+      viteCompression({
+        verbose: true,
+        disable: false,
+        threshold: 1024,
+        algorithm: 'gzip',
+        deleteOriginFile: true
+      }),
+      visualizer({ open: false })
     ],
     resolve: {
       alias: {
@@ -61,13 +71,26 @@ export default defineConfig(({ mode }) => {
               if (id.includes('echarts')) {
                 return 'vendor-echarts'
               }
-              // 通用 vendor 包
-              return 'vendor-core'
+              if (id.includes('wangeditor')) {
+                return 'vendor-wangeditor'
+              }
+              if (id.includes('md-editor-v3')) {
+                return 'vendor-md-editor-v3'
+              }
+              if (id.includes('pinyin-pro')) {
+                return 'vendor-pinyin-pro'
+              }
+              if (id.includes('xgplayer')) {
+                return 'vendor-xgplayer'
+              }
+              if (id.includes('vue-cropper')) {
+                return 'vendor-vue-cropper'
+              }
             }
           }
         }
       },
-      chunkSizeWarningLimit: 1000
+      chunkSizeWarningLimit: 1500
     }
   }
 })
