@@ -50,9 +50,24 @@ export default defineConfig(({ mode }) => {
         output: {
           chunkFileNames: 'static/js/[name]-[hash].js', // 引入文件名的名称
           entryFileNames: 'static/js/[name]-[hash].js', // 包的入口文件名称
-          assetFileNames: 'static/[ext]/[name]-[hash].[ext]' // 资源文件像 字体，图片等
+          assetFileNames: 'static/[ext]/[name]-[hash].[ext]', // 资源文件像 字体，图片等
+          manualChunks(id) {
+            // 将 node_modules 依赖分解为独立 chunk
+            if (id.includes('node_modules')) {
+              // 单独拆分大型库
+              if (id.includes('element-plus')) {
+                return 'vendor-element-plus'
+              }
+              if (id.includes('echarts')) {
+                return 'vendor-echarts'
+              }
+              // 通用 vendor 包
+              return 'vendor-core'
+            }
+          }
         }
-      }
+      },
+      chunkSizeWarningLimit: 1000
     }
   }
 })
