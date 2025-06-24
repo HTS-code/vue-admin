@@ -30,6 +30,7 @@ defineOptions({
   name: 'ComponentsVideo'
 })
 
+import { getImageUrl } from '@/utils'
 import { onMounted, onUnmounted, ref } from 'vue'
 import Player from 'xgplayer'
 import FlvPlugin from 'xgplayer-flv'
@@ -66,7 +67,7 @@ onMounted(() => {
     id: 'mse',
     url: '//sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-720p.mp4',
     autoplay: false,
-    poster: 'src/assets/images/video.png',
+    poster: getImageUrl('video.png'),
     progressDot
   })
 
