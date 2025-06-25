@@ -44,6 +44,12 @@ const route = [
         meta: { title: '地图', i18nName: 'tadComponentsMap', icon: 'map' },
         name: 'componentsMap',
         component: () => import('@/views/components/map/index.vue')
+      },
+      {
+        path: 'qrcode',
+        meta: { title: '二维码', i18nName: 'tadComponentsQrcode', icon: 'qrcode' },
+        name: 'componentsQrcode',
+        component: () => import('@/views/components/qrcode/index.vue')
       }
     ]
   }

@@ -50,6 +50,9 @@ importers:
       pinyin-pro:
         specifier: ^3.26.0
         version: 3.26.0
+      qrcode.vue:
+        specifier: ^3.6.0
+        version: 3.6.0(vue@3.5.16)
       vue:
         specifier: ^3.5.16
         version: 3.5.16
@@ -2779,6 +2782,11 @@ packages:
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
+
+  qrcode.vue@3.6.0:
+    resolution: {integrity: sha512-vQcl2fyHYHMjDO1GguCldJxepq2izQjBkDEEu9NENgfVKP6mv/e2SU62WbqYHGwTgWXLhxZ1NCD1dAZKHQq1fg==}
+    peerDependencies:
+      vue: ^3.0.0
 
   quansync@0.2.10:
     resolution: {integrity: sha512-t41VRkMYbkHyCYmOvx/6URnN80H7k4X0lLdBMGsz+maAwrJQYB1djpV6vHrQIBE0WBSGqhtEHrK9U3DWWH8v7A==}
@@ -6470,6 +6478,10 @@ snapshots:
   punycode.js@2.3.1: {}
 
   punycode@2.3.1: {}
+
+  qrcode.vue@3.6.0(vue@3.5.16):
+    dependencies:
+      vue: 3.5.16
 
   quansync@0.2.10: {}
 

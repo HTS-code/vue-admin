@@ -76,6 +76,14 @@ const menu = ref([
         il18Name: 'tadComponentsMap',
         id: '026',
         children: []
+      },
+      {
+        path: '/components/qrcode',
+        icon: 'qrcode',
+        name: 'ComponentsQrcode',
+        il18Name: 'tadComponentsQrcode',
+        id: '027',
+        children: []
       }
     ]
   },

@@ -1,0 +1,14 @@
+.describe {
+  padding-bottom: 20px;
+  display: flex;
+}
+
+.qrcode-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  :deep(.qrcode-custom) {
+    border: 1px solid #e1e1e1;
+  }
+}

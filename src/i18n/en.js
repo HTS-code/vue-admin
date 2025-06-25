@@ -25,7 +25,8 @@ const en = {
     tadComponentsCropper: 'Image Cropper',
     tadComponentsVideo: 'Video',
     tadComponentsPinYin: 'PinYin',
-    tadComponentsMap: 'Map'
+    tadComponentsMap: 'Map',
+    tadComponentsQrcode: 'Qrcode'
   }
 }
 export default en
