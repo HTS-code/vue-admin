@@ -67,14 +67,14 @@ const initMap = () => {
   AMapLoader.load({
     key: '1a8fbb5455215adf3e188dbd962cfbe5',
     version: '2.0',
-    plugins: ['AMap.Scale', 'AMap.Marker', 'AMap.ToolBar']
+    plugins: ['AMap.Scale', 'AMap.Marker', 'AMap.ToolBar', 'AMap.Geocoder', 'AMap.Geolocation']
   })
     .then(AMap => {
       AMapValue.value = AMap
 
       map.value = new AMap.Map('container', {
         viewMode: '3D',
-        zoom: 5,
+        zoom: 10,
         center: [116.405562, 39.881166]
       })
 
@@ -84,7 +84,7 @@ const initMap = () => {
       let tool = new AMap.ToolBar()
       map.value.addControl(tool)
 
-      const arr = [{ position: [116, 39] }, { position: [115, 39] }]
+      const arr = [{ position: [116.405562, 39.881166] }, { position: [115, 39] }]
       markers.value = arr.map(location => {
         return getMarker(location)
       })
@@ -97,6 +97,43 @@ const initMap = () => {
       })
 
       map.value.add(markers.value)
+
+      let geocoder = new AMap.Geocoder()
+      let geolocation = new AMap.Geolocation({
+        enableHighAccuracy: true, // 是否使用高精度定位，默认：true
+        timeout: 10000, // 设置定位超时时间，默认：无穷大
+        offset: [10, 20], // 定位按钮的停靠位置的偏移量
+        zoomToAccuracy: true, //  定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+        position: 'TB' //  定位按钮的排放位置,  RB表示右下
+      })
+
+      geolocation.getCurrentPosition(function (status, result) {
+        if (status === 'complete') {
+          let lnglat = [result.position.lng, result.position.lat]
+          geocoder.getAddress(lnglat, function (status, result) {
+            if (status === 'complete' && result.info === 'OK') {
+              // result为对应的地理位置详细信息
+              ElMessage.success('定位成功：' + result.regeocode.formattedAddress)
+            } else {
+              ElMessage.error('地理位置转换失败')
+            }
+          })
+        } else {
+          // onError(result)
+        }
+      })
+
+      map.value.on('click', e => {
+        let lnglat = [e.lnglat.lng, e.lnglat.lat]
+        geocoder.getAddress(lnglat, function (status, result) {
+          if (status === 'complete' && result.info === 'OK') {
+            // result为对应的地理位置详细信息
+            ElMessage.success(result.regeocode.formattedAddress)
+          } else {
+            ElMessage.error('地理位置转换失败')
+          }
+        })
+      })
     })
     .catch(() => {
       ElMessage.error('Map初始化失败')
