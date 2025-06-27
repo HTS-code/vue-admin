@@ -118,7 +118,7 @@ const initMap = () => {
     }
   }
   window._AMapSecurityConfig = {
-    securityJsCode: '90b2f3317dc074bf0ddfa1e78943689a'
+    serviceHost: 'http://localhost:8080/_AMapService'
   }
   AMapLoader.load({
     key: '1a8fbb5455215adf3e188dbd962cfbe5',
