@@ -84,6 +84,14 @@ const menu = ref([
         il18Name: 'tadComponentsQrcode',
         id: '027',
         children: []
+      },
+      {
+        path: '/components/pdf',
+        icon: 'pdf',
+        name: 'ComponentsPdf',
+        il18Name: 'tadComponentsPdf',
+        id: '028',
+        children: []
       }
     ]
   },

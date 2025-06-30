@@ -50,6 +50,12 @@ const route = [
         meta: { title: '二维码', i18nName: 'tadComponentsQrcode', icon: 'qrcode' },
         name: 'componentsQrcode',
         component: () => import('@/views/components/qrcode/index.vue')
+      },
+      {
+        path: 'pdf',
+        meta: { title: 'Pdf', i18nName: 'tadComponentsPdf', icon: 'pdf' },
+        name: 'componentsPdf',
+        component: () => import('@/views/components/pdf/index.vue')
       }
     ]
   }

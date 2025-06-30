@@ -26,7 +26,8 @@ const en = {
     tadComponentsVideo: 'Video',
     tadComponentsPinYin: 'PinYin',
     tadComponentsMap: 'Map',
-    tadComponentsQrcode: 'Qrcode'
+    tadComponentsQrcode: 'Qrcode',
+    tadComponentsPdf: 'Pdf'
   }
 }
 export default en
