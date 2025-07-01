@@ -1,10 +1,8 @@
 <template>
-  <el-card>
-    <template #header>
-      <div class="card-header">
-        <span>视频直播</span>
-      </div>
-    </template>
+  <div class="card">
+    <div class="card-header">
+      <span>视频直播</span>
+    </div>
 
     <div class="describe">
       采用开源组件<el-link type="primary" href="https://v2.h5player.bytedance.com/gettingStarted/" target="_blank">
@@ -22,7 +20,7 @@
         <div id="mseFlv"></div>
       </div>
     </div>
-  </el-card>
+  </div>
 </template>
 
 <script setup>

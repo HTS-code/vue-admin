@@ -1,10 +1,8 @@
 <template>
-  <el-card>
-    <template #header>
-      <div class="card-header">
-        <span>二维码</span>
-      </div>
-    </template>
+  <div class="card">
+    <div class="card-header">
+      <span>二维码</span>
+    </div>
 
     <div class="describe">
       采用开源组件<el-link type="primary" href="https://qr-vue.tie.pub/" target="_blank"> Qrcode </el-link
@@ -20,7 +18,7 @@
 
       <qrcode-vue value="Hell World, This is a Qrcode" :size="150" :image-settings="imageSettings" />
     </div>
-  </el-card>
+  </div>
 </template>
 
 <script setup>

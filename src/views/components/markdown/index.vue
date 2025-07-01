@@ -1,10 +1,8 @@
 <template>
-  <el-card>
-    <template #header>
-      <div class="card-header">
-        <span>Markdown 组件</span>
-      </div>
-    </template>
+  <div class="card">
+    <div class="card-header">
+      <span>Markdown 组件</span>
+    </div>
 
     <div class="describe">
       采用开源组件
@@ -28,7 +26,7 @@
         <Emoji />
       </template>
     </MdEditor>
-  </el-card>
+  </div>
 </template>
 
 <script setup>

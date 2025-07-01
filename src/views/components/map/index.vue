@@ -1,10 +1,8 @@
 <template>
-  <el-card>
-    <template #header>
-      <div class="card-header">
-        <span>地图</span>
-      </div>
-    </template>
+  <div class="card">
+    <div class="card-header">
+      <span>地图</span>
+    </div>
 
     <div class="describe">
       采用
@@ -26,7 +24,7 @@
     </div>
 
     <div id="container"></div>
-  </el-card>
+  </div>
 </template>
 
 <script setup>

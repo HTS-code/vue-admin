@@ -1,10 +1,8 @@
 <template>
-  <el-card>
-    <template #header>
-      <div class="card-header">
-        <span>PDF</span>
-      </div>
-    </template>
+  <div class="card">
+    <div class="card-header">
+      <span>PDF</span>
+    </div>
 
     <div class="describe">
       采用开源组件<el-link type="primary" href="https://www.npmjs.com/package/vue-pdf-embed" target="_blank">
@@ -36,7 +34,7 @@
       @loaded="handleDocumentLoad"
       @rendered="handleDocumentRender"
     />
-  </el-card>
+  </div>
 </template>
 
 <script setup>

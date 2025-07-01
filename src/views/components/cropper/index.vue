@@ -1,10 +1,8 @@
 <template>
-  <el-card>
-    <template #header>
-      <div class="card-header">
-        <span>图片裁剪</span>
-      </div>
-    </template>
+  <div class="card">
+    <div class="card-header">
+      <span>图片裁剪</span>
+    </div>
 
     <div class="describe">
       采用开源组件<el-link type="primary" href="https://github.com/xyxiao001/vue-cropper" target="_blank">
@@ -68,7 +66,7 @@
       <el-button plain size="small" type="primary" icon="RefreshRight" @click="imgRotateRight" />
       <el-button plain size="small" type="primary" icon="RefreshLeft" @click="imgRotateLeft" />
     </div>
-  </el-card>
+  </div>
 </template>
 
 <script setup>

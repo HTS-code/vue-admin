@@ -1,10 +1,8 @@
 <template>
-  <el-card>
-    <template #header>
-      <div class="card-header">
-        <span>富文本 组件</span>
-      </div>
-    </template>
+  <div class="card">
+    <div class="card-header">
+      <span>富文本 组件</span>
+    </div>
 
     <div class="describe">
       采用开源组件<el-link type="primary" href="https://www.wangeditor.com/v5/" target="_blank"> Wangeditor </el-link
@@ -21,7 +19,7 @@
         @onCreated="handleCreated"
       />
     </div>
-  </el-card>
+  </div>
 </template>
 
 <script setup>

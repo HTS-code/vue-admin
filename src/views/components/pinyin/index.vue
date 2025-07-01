@@ -1,10 +1,8 @@
 <template>
-  <el-card>
-    <template #header>
-      <div class="card-header">
-        <span>汉语拼音</span>
-      </div>
-    </template>
+  <div class="card">
+    <div class="card-header">
+      <span>汉语拼音</span>
+    </div>
 
     <div class="describe">
       采用开源组件<el-link type="primary" href="https://pinyin-pro.cn/guide/compare.html" target="_blank">
@@ -33,7 +31,7 @@
     <div class="pinyin-content custom">
       <div v-html="html('自定义样式')"></div>
     </div>
-  </el-card>
+  </div>
 </template>
 
 <script setup>
