@@ -1,0 +1,15 @@
+.describe {
+  padding-bottom: 20px;
+  display: flex;
+}
+
+.pdf-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &-left {
+    .pdf-page {
+      padding: 0 10px;
+    }
+  }
+}
