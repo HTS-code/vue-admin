@@ -5,10 +5,10 @@
         <SvgIcon
           :name="item.icon"
           marginRight="3px"
-          :width="!settingStore.isCollapsed ? '1rem' : '1.4rem'"
-          :height="!settingStore.isCollapsed ? '1rem' : '1.4rem'"
+          :width="!settingStore.isCollapsed ? '1rem' : '1.5rem'"
+          :height="!settingStore.isCollapsed ? '1rem' : '1.5rem'"
         />
-        <span>{{ $t(`messages.${item.il18Name}`) }}</span>
+        <span class="menu-title">{{ $t(`messages.${item.il18Name}`) }}</span>
       </template>
       <menu-tree :menu="item.children" />
     </el-sub-menu>
@@ -18,10 +18,10 @@
         <SvgIcon
           :name="item.icon"
           marginRight="3px"
-          :width="!settingStore.isCollapsed ? '1rem' : '1.4rem'"
-          :height="!settingStore.isCollapsed ? '1rem' : '1.4rem'"
+          :width="!settingStore.isCollapsed ? '1rem' : '1.5rem'"
+          :height="!settingStore.isCollapsed ? '1rem' : '1.5rem'"
         />
-        <span>{{ $t(`messages.${item.il18Name}`) }}</span>
+        <span class="menu-title">{{ $t(`messages.${item.il18Name}`) }}</span>
       </el-menu-item>
     </template>
   </template>
@@ -43,3 +43,7 @@ defineProps({
   }
 })
 </script>
+
+<style lang="scss" scoped>
+@use './index.scss' as *;
+</style>
