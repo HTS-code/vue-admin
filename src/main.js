@@ -25,3 +25,26 @@ app.use(router)
 app.use(i18n)
 
 app.mount('#app')
+const hideLoading = () => {
+  const loadingElement = document.getElementById('app-loading')
+  const appElement = document.getElementById('app')
+
+  if (loadingElement && appElement) {
+    loadingElement.classList.add('fade-out')
+
+    setTimeout(() => {
+      appElement.classList.add('loaded')
+    }, 100)
+
+    setTimeout(() => {
+      loadingElement.remove()
+    }, 600)
+  }
+}
+
+// 等待路由初始化完成后隐藏加载动画
+router.isReady().then(() => {
+  setTimeout(() => {
+    hideLoading()
+  }, 800)
+})

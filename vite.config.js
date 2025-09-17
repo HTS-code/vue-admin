@@ -47,6 +47,7 @@ export default defineConfig(({ mode }) => {
       }
     },
     server: {
+      port: 8210,
       proxy: {
         '/api': {
           target: 'http://127.0.0.1:3000',
