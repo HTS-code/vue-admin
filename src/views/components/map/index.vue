@@ -116,7 +116,7 @@ const initMap = () => {
     }
   }
   window._AMapSecurityConfig = {
-    serviceHost: 'http://localhost:8080/_AMapService'
+    serviceHost: import.meta.env.VITE_AMAP_SERVICE_HOST
   }
   AMapLoader.load({
     key: '1a8fbb5455215adf3e188dbd962cfbe5',

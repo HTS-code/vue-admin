@@ -73,6 +73,7 @@
 import 'vue-cropper/dist/index.css'
 import { VueCropper } from 'vue-cropper'
 import { reactive, ref, useTemplateRef } from 'vue'
+import { getImageUrl } from '@/utils'
 
 defineOptions({
   name: 'ComponentsCropper'
@@ -85,7 +86,7 @@ const uploadRef = useTemplateRef('uploadRef')
 const srcList = ref([])
 
 const option = reactive({
-  img: 'http://img1.vued.vanthink.cn/vued751d13a9cb5376b89cb6719e86f591f3.png',
+  img: getImageUrl('avatar.jpg'),
   autoCrop: true
 })
 

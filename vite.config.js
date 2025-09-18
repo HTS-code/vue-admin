@@ -33,6 +33,7 @@ export default defineConfig(({ mode }) => {
         symbolId: 'icon-[dir]-[name]'
       }),
       viteCompression({
+        filter: /\.(js|css|json|svg|ico|png|jpg|jpeg|gif|webp)$/i, // 排除HTML文件
         verbose: true,
         disable: false,
         threshold: 1024,
