@@ -9,6 +9,10 @@
   [![Vite](https://img.shields.io/badge/Vite-6.3.5-646CFF?style=flat-square&logo=vite)](https://vitejs.dev/)
   [![Element Plus](https://img.shields.io/badge/Element%20Plus-2.10.1-409EFF?style=flat-square&logo=element)](https://element-plus.org/)
   [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+  
+  <h4>
+    <a href="https://vue.yddekd.com/#/dashboard" target="_blank">🚀 在线预览</a>
+  </h4>
 </div>
 
 ## ✨ 特性
