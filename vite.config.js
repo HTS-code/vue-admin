@@ -14,6 +14,7 @@ import { visualizer } from 'rollup-plugin-visualizer'
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   return {
+    base: './',
     // 全局常量注入
     define: {
       __APP_VERSION__: JSON.stringify(env.npm_package_version) // 项目版本号
