@@ -33,14 +33,14 @@ export default defineConfig(({ mode }) => {
         iconDirs: [path.resolve(process.cwd(), 'src/assets/svg')],
         symbolId: 'icon-[dir]-[name]'
       }),
-      viteCompression({
-        filter: /\.(js|css|json|svg|ico|png|jpg|jpeg|gif|webp)$/i, // 排除HTML文件
-        verbose: true,
-        disable: false,
-        threshold: 1024,
-        algorithm: 'gzip',
-        deleteOriginFile: true
-      }),
+      // viteCompression({
+      //   filter: /\.(js|css|json|svg|ico|png|jpg|jpeg|gif|webp)$/i, // 排除HTML文件
+      //   verbose: true,
+      //   disable: false,
+      //   threshold: 1024,
+      //   algorithm: 'gzip',
+      //   deleteOriginFile: true
+      // }),
       visualizer({ open: false })
     ],
     resolve: {
@@ -57,43 +57,43 @@ export default defineConfig(({ mode }) => {
           rewrite: path => path.replace(/^\/api/, '')
         }
       }
-    },
-    build: {
-      rollupOptions: {
-        output: {
-          chunkFileNames: 'static/js/[name]-[hash].js', // 引入文件名的名称
-          entryFileNames: 'static/js/[name]-[hash].js', // 包的入口文件名称
-          assetFileNames: 'static/[ext]/[name]-[hash].[ext]', // 资源文件像 字体，图片等
-          manualChunks(id) {
-            // 将 node_modules 依赖分解为独立 chunk
-            if (id.includes('node_modules')) {
-              // 单独拆分大型库
-              if (id.includes('element-plus')) {
-                return 'vendor-element-plus'
-              }
-              if (id.includes('echarts')) {
-                return 'vendor-echarts'
-              }
-              if (id.includes('wangeditor')) {
-                return 'vendor-wangeditor'
-              }
-              if (id.includes('md-editor-v3')) {
-                return 'vendor-md-editor-v3'
-              }
-              if (id.includes('pinyin-pro')) {
-                return 'vendor-pinyin-pro'
-              }
-              if (id.includes('xgplayer')) {
-                return 'vendor-xgplayer'
-              }
-              if (id.includes('vue-cropper')) {
-                return 'vendor-vue-cropper'
-              }
-            }
-          }
-        }
-      },
-      chunkSizeWarningLimit: 1500
     }
+    // build: {
+    //   rollupOptions: {
+    //     output: {
+    //       chunkFileNames: 'static/js/[name]-[hash].js', // 引入文件名的名称
+    //       entryFileNames: 'static/js/[name]-[hash].js', // 包的入口文件名称
+    //       assetFileNames: 'static/[ext]/[name]-[hash].[ext]', // 资源文件像 字体，图片等
+    //       manualChunks(id) {
+    //         // 将 node_modules 依赖分解为独立 chunk
+    //         if (id.includes('node_modules')) {
+    //           // 单独拆分大型库
+    //           if (id.includes('element-plus')) {
+    //             return 'vendor-element-plus'
+    //           }
+    //           if (id.includes('echarts')) {
+    //             return 'vendor-echarts'
+    //           }
+    //           if (id.includes('wangeditor')) {
+    //             return 'vendor-wangeditor'
+    //           }
+    //           if (id.includes('md-editor-v3')) {
+    //             return 'vendor-md-editor-v3'
+    //           }
+    //           if (id.includes('pinyin-pro')) {
+    //             return 'vendor-pinyin-pro'
+    //           }
+    //           if (id.includes('xgplayer')) {
+    //             return 'vendor-xgplayer'
+    //           }
+    //           if (id.includes('vue-cropper')) {
+    //             return 'vendor-vue-cropper'
+    //           }
+    //         }
+    //       }
+    //     }
+    //   },
+    //   chunkSizeWarningLimit: 1500
+    // }
   }
 })
