@@ -27,7 +27,8 @@ const en = {
     tadComponentsPinYin: 'PinYin',
     tadComponentsMap: 'Map',
     tadComponentsQrcode: 'Qrcode',
-    tadComponentsPdf: 'Pdf'
+    tadComponentsPdf: 'Pdf',
+    tadTools: 'Practical Tools'
   }
 }
 export default en

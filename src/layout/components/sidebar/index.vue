@@ -17,118 +17,53 @@ import customMenu from './components/menu/index.vue'
 import { ref } from 'vue'
 
 const settingStore = useSettingStore()
-
 const route = useRoute()
-
-const menu = ref([
-  { path: '/dashboard', icon: 'house', il18Name: 'tadHome', name: '首页', id: '01', children: [] },
-  {
-    path: '/components',
-    icon: 'components',
-    name: 'Components',
-    il18Name: 'tadComponents',
-    id: '02',
-    children: [
-      {
-        path: '/components/markdown',
-        icon: 'markdown',
-        name: 'ComponentsMarkdown',
-        il18Name: 'tadComponentsMarkdown',
-        id: '021',
-        children: []
-      },
-      {
-        path: '/components/editor',
-        icon: 'editor',
-        name: 'ComponentsEditor',
-        il18Name: 'tadComponentsEditor',
-        id: '022',
-        children: []
-      },
-      {
-        path: '/components/cropper',
-        icon: 'cropper',
-        name: 'ComponentsCropper',
-        il18Name: 'tadComponentsCropper',
-        id: '023',
-        children: []
-      },
-      {
-        path: '/components/video',
-        icon: 'video',
-        name: 'ComponentsVideo',
-        il18Name: 'tadComponentsVideo',
-        id: '024',
-        children: []
-      },
-      {
-        path: '/components/pinyin',
-        icon: 'pinyin',
-        name: 'ComponentsPinYin',
-        il18Name: 'tadComponentsPinYin',
-        id: '025',
-        children: []
-      },
-      {
-        path: '/components/map',
-        icon: 'map',
-        name: 'ComponentsMap',
-        il18Name: 'tadComponentsMap',
-        id: '026',
-        children: []
-      },
-      {
-        path: '/components/qrcode',
-        icon: 'qrcode',
-        name: 'ComponentsQrcode',
-        il18Name: 'tadComponentsQrcode',
-        id: '027',
-        children: []
-      },
-      {
-        path: '/components/pdf',
-        icon: 'pdf',
-        name: 'ComponentsPdf',
-        il18Name: 'tadComponentsPdf',
-        id: '028',
-        children: []
-      }
-    ]
-  },
-  {
-    path: '/system',
-    icon: 'system',
-    name: '系统管理',
-    il18Name: 'tadSysManagement',
-    id: '05',
-    children: [
-      {
-        path: '/system/user',
-        icon: 'user',
-        name: '用户管理',
-        il18Name: 'tadUserManage',
-        id: '051',
-        children: []
-      },
-      {
-        path: '/system/role',
-        icon: 'person',
-        name: '角色管理',
-        il18Name: 'tadRoleManage',
-        id: '052',
-        children: []
-      }
-    ]
-  },
-  {
-    path: '/about/index',
-    icon: 'about',
-    name: '关于',
-    il18Name: 'tadAbout',
-    id: '07',
-    children: []
+const menu = ref([])
+// 获取菜单
+const getMenu = () => {
+  // 获取前端注册所有动态路由
+  let modules = import.meta.glob('@/router/modules/*.js', { eager: true })
+  const routes = []
+  // 1. 将路径和优先级组成数组
+  const moduleEntries = Object.entries(modules).map(([path, module]) => ({
+    path,
+    priority: module.priority || 99, // 默认优先级（数字越大越靠后）
+    module
+  }))
+  // 2. 按优先级排序（从小到大）
+  moduleEntries.sort((a, b) => a.priority - b.priority)
+  // 3. 按排序后的顺序添加路由
+  moduleEntries.forEach(({ module }) => {
+    routes.push(...module.default)
+  })
+  menu.value = routes.map(item => {
+    return {
+      path: item.path,
+      icon: item?.meta.icon || '',
+      name: item?.meta.title || '',
+      il18Name: item.meta.i18nName,
+      id: item.name,
+      children: getSubMenu(item)
+    }
+  })
+  menu.value.unshift({ path: '/dashboard', icon: 'house', il18Name: 'tadHome', name: '首页', id: '01', children: [] })
+}
+// 获取子菜单
+const getSubMenu = item => {
+  if (item.children.length === 1 && item.children[0].path === 'index') {
+    return []
   }
-])
+  return item.children.map(child => {
+    return {
+      path: item.path + '/' + child.path,
+      icon: child?.meta.icon || '',
+      name: child?.meta.title || '',
+      il18Name: child?.meta.i18nName || '',
+      id: child.name
+    }
+  })
+}
+getMenu()
 </script>
 
 <style lang="scss" scoped>

@@ -20,3 +20,5 @@ const route = [
 ]
 
 export default route
+// 优先级
+export const priority = 100

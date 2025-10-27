@@ -27,7 +27,8 @@ const zhCN = {
     tadComponentsPinYin: '汉语拼音',
     tadComponentsMap: '地图',
     tadComponentsQrcode: '二维码',
-    tadComponentsPdf: 'Pdf'
+    tadComponentsPdf: 'Pdf',
+    tadTools: '实用工具'
   }
 }
 export default zhCN
